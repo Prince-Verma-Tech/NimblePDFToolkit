@@ -1,0 +1,11 @@
+Flask
+PyPDF2
+pdf2image
+Pillow
+PyMuPDF
+img2pdf
+reportlab
+pikepdf
+python-pptx
+python-docx
+pywin32

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Result</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ff9800;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      margin-top: 20px;
+    }
+
+    pre {
+      background-color: #1e1e1e;
+      padding: 10px;
+      border-radius: 4px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      max-width: 80%;
+      margin: 0 auto;
+    }
+
+    img {
+      max-width: 300px;
+      border-radius: 5px;
+      margin-top: 10px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    }
+
+    a {
+      color: #ff9800;
+      text-decoration: none;
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px;
+      background-color: #333;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    a:hover {
+      background-color: #444;
+    }
+  </style>
+</head>
+<body>
+  <h1>Result</h1>
+
+  {% if text %}
+  <h3>Extracted Text:</h3>
+  <pre>{{ text }}</pre>
+  {% endif %}
+
+  {% if images %}
+  <h3>Images:</h3>
+  {% for img in images %}
+  <img src="{{ url_for('static', filename='images/' + img.split('/')[-1]) }}" alt="Image"><br>
+  {% endfor %}
+  {% endif %}
+
+  <a href="/">Back to Home</a>
+</body>
+</html>
